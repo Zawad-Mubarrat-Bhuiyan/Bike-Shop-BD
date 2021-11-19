@@ -5,13 +5,13 @@ const ManageOrder = () => {
       const [orders, setOrders] = useState([])
       const [isUpdate, setIsUpdate] = useState(null)
       useEffect(() => {
-            fetch('http://localhost:5000/allorders')
+            fetch('https://immense-coast-56326.herokuapp.com/allorders')
                   .then(res => res.json())
                   .then(data => setOrders(data))
       }, [isUpdate])
 
       const clickHandle = id => {
-            const url = `http://localhost:5000/orders/${id}`
+            const url = `https://immense-coast-56326.herokuapp.com/orders/${id}`
             fetch(url)
                   .then(res => res.json())
                   .then(data => {
@@ -27,7 +27,7 @@ const ManageOrder = () => {
 
             const proceed = window.confirm('Are you sure,you want to delete');
             if (proceed) {
-                  const url = `http://localhost:5000/orders/${id}`
+                  const url = `https://immense-coast-56326.herokuapp.com/orders/${id}`
                   fetch(url, {
                         method: 'DELETE',
 

@@ -11,7 +11,7 @@ const Purchase = () => {
       let orderStatus = "pending";
       const onSubmit = data => {
             data.status = orderStatus;
-            fetch('http://localhost:5000/orders', {
+            fetch('https://immense-coast-56326.herokuapp.com/orders', {
                   method: 'POST',
                   headers: {
                         'content-type': 'application/json'
@@ -28,7 +28,7 @@ const Purchase = () => {
                   })
       };
       useEffect(() => {
-            fetch(`http://localhost:5000/products/${productId}`)
+            fetch(`https://immense-coast-56326.herokuapp.com/products/${productId}`)
                   .then(res => res.json())
                   .then(data => {
                         setProducts(data)

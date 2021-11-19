@@ -5,14 +5,14 @@ const ManageProducts = () => {
       const [product, setProduct] = useState([])
       const [isUpdate, setIsUpdate] = useState(null)
       useEffect(() => {
-            fetch('http://localhost:5000/products')
+            fetch('https://immense-coast-56326.herokuapp.com/products')
                   .then(res => res.json())
                   .then(data => setProduct(data))
       }, [isUpdate])
       const deletehandeler = id => {
             const proceed = window.confirm('Are you sure,you want to delete');
             if (proceed) {
-                  const url = `http://localhost:5000/products/${id}`
+                  const url = `https://immense-coast-56326.herokuapp.com/products/${id}`
                   fetch(url, {
                         method: 'DELETE',
                   })
